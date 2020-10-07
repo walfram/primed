@@ -1,0 +1,105 @@
+[
+	{
+		"name": "Octasphere",
+		"translation": [
+			0.0,
+			0.0,
+			0.0
+		],
+		"rotation": [
+			0.0,
+			0.0,
+			0.0
+		],
+		"scale": [
+			2.0,
+			2.0,
+			10.0
+		],
+		"shape": {
+			"name": "primed.shapes.impl.ShOctasphere",
+			"params": {
+				"numRefineSteps": "2",
+				"flatShaded": "true"
+			}
+		}
+	},
+	{
+		"name": "Prism",
+		"translation": [
+			0.0,
+			0.0,
+			-2.0
+		],
+		"rotation": [
+			0.0,
+			0.0,
+			0.0
+		],
+		"scale": [
+			10.0,
+			0.25,
+			5.0
+		],
+		"shape": {
+			"name": "primed.shapes.impl.ShPrism",
+			"params": {
+				"numSides": "3"
+			}
+		}
+	},
+	{
+		"name": "Torus",
+		"translation": [
+			3.0,
+			1.5,
+			-4.0
+		],
+		"rotation": [
+			0.0,
+			0.0,
+			0.0
+		],
+		"scale": [
+			1.0,
+			1.0,
+			10.0
+		],
+		"shape": {
+			"name": "primed.shapes.impl.ShTorus",
+			"params": {
+				"circleSamples": "8",
+				"radialSamples": "10",
+				"minorRadius": "0.5",
+				"flatShaded": "true"
+			}
+		}
+	},
+	{
+		"name": "Torus-copy",
+		"translation": [
+			-3.0,
+			1.5,
+			-4.0
+		],
+		"rotation": [
+			0.0,
+			0.0,
+			0.0
+		],
+		"scale": [
+			1.0,
+			1.0,
+			10.0
+		],
+		"shape": {
+			"name": "primed.shapes.impl.ShTorus",
+			"params": {
+				"circleSamples": "8",
+				"radialSamples": "10",
+				"minorRadius": "0.5",
+				"flatShaded": "true"
+			}
+		}
+	}
+]

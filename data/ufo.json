@@ -1,0 +1,52 @@
+[
+	{
+		"name": "Octasphere",
+		"translation": [
+			0.0,
+			0.0,
+			0.0
+		],
+		"rotation": [
+			0.0,
+			0.0,
+			0.0
+		],
+		"scale": [
+			10.0,
+			2.0,
+			10.0
+		],
+		"shape": {
+			"name": "primed.shapes.impl.ShOctasphere",
+			"params": {
+				"numRefineSteps": "2",
+				"flatShaded": "true"
+			}
+		}
+	},
+	{
+		"name": "Octasphere",
+		"translation": [
+			0.0,
+			1.75,
+			0.0
+		],
+		"rotation": [
+			0.0,
+			0.0,
+			0.0
+		],
+		"scale": [
+			5.0,
+			3.0,
+			5.0
+		],
+		"shape": {
+			"name": "primed.shapes.impl.ShOctasphere",
+			"params": {
+				"numRefineSteps": "2",
+				"flatShaded": "true"
+			}
+		}
+	}
+]

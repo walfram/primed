@@ -1,0 +1,155 @@
+[
+	{
+		"name": "Box",
+		"translation": [
+			-9.599732,
+			0.0,
+			0.0
+		],
+		"rotation": [
+			0.0,
+			0.61086524,
+			0.0
+		],
+		"scale": [
+			5.262425,
+			1.0,
+			2.9641073
+		],
+		"shape": {
+			"name": "primed.shapes.impl.ShBox",
+			"params": {
+			}
+		}
+	},
+	{
+		"name": "Cylinder",
+		"translation": [
+			-7.1892586,
+			2.7354655,
+			0.0
+		],
+		"rotation": [
+			0.0,
+			0.0,
+			0.0
+		],
+		"scale": [
+			1.0,
+			1.0,
+			1.0
+		],
+		"shape": {
+			"name": "primed.shapes.impl.ShCylinder",
+			"params": {
+				"axisSamples": "8",
+				"radialSamples": "8",
+				"topRadius": "0.25",
+				"bottomRadius": "1.0",
+				"flatShaded": "true"
+			}
+		}
+	},
+	{
+		"name": "Octasphere",
+		"translation": [
+			0.0,
+			0.0,
+			-6.909236
+		],
+		"rotation": [
+			0.0,
+			0.0,
+			-0.69813174
+		],
+		"scale": [
+			1.0,
+			1.0,
+			3.7555618
+		],
+		"shape": {
+			"name": "primed.shapes.impl.ShOctasphere",
+			"params": {
+				"numRefineSteps": "2",
+				"flatShaded": "true"
+			}
+		}
+	},
+	{
+		"name": "Prism",
+		"translation": [
+			-9.538477,
+			0.0,
+			6.137152
+		],
+		"rotation": [
+			0.0,
+			0.0,
+			0.0
+		],
+		"scale": [
+			1.6984563,
+			0.9085455,
+			1.8576102
+		],
+		"shape": {
+			"name": "primed.shapes.impl.ShPrism",
+			"params": {
+				"numSides": "8"
+			}
+		}
+	},
+	{
+		"name": "Sphere",
+		"translation": [
+			0.0,
+			0.0,
+			-11.546195
+		],
+		"rotation": [
+			0.0,
+			0.0,
+			0.0
+		],
+		"scale": [
+			5.711688,
+			1.0,
+			1.0
+		],
+		"shape": {
+			"name": "primed.shapes.impl.ShSphere",
+			"params": {
+				"zSamples": "8",
+				"radialSamples": "8",
+				"flatShaded": "true"
+			}
+		}
+	},
+	{
+		"name": "Torus",
+		"translation": [
+			3.4034405,
+			0.0,
+			0.0
+		],
+		"rotation": [
+			0.0,
+			0.0,
+			0.0
+		],
+		"scale": [
+			1.0,
+			1.0,
+			45.185493
+		],
+		"shape": {
+			"name": "primed.shapes.impl.ShTorus",
+			"params": {
+				"circleSamples": "8",
+				"radialSamples": "8",
+				"minorRadius": "0.125",
+				"flatShaded": "true"
+			}
+		}
+	}
+]
