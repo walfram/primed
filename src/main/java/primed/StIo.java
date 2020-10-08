@@ -14,6 +14,8 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.jme3.app.Application;
 import com.jme3.app.state.BaseAppState;
+import com.jme3.export.binary.BinaryExporter;
+import com.jme3.material.Material;
 import com.jme3.math.Quaternion;
 import com.jme3.math.Vector3f;
 import com.jme3.scene.Geometry;
@@ -127,6 +129,32 @@ final class StIo extends BaseAppState {
 			Vector3f scale = new Vector3f(o.path("scale").get(0).floatValue(), o.path("scale").get(1).floatValue(), o.path(
 					"scale").get(2).floatValue());
 			geometry.setLocalScale(scale);
+		}
+	}
+
+	public void toJ3o(Node scene, File file) {
+		Node clone = scene.clone(true);
+
+		clone.depthFirstTraversal(child -> {
+			if (child.getControl(CtShapeRef.class) != null)
+				child.removeControl(CtShapeRef.class);
+
+			if (child instanceof Geometry) {
+				Material material = ((Geometry) child).getMaterial();
+
+				Material m = new Material(material.getMaterialDef());
+				material.getParams().forEach(param -> {
+					m.setParam(param.getName(), param.getVarType(), param.getValue());
+				});
+
+				((Geometry) child).setMaterial(m);
+			}
+		});
+
+		try {
+			BinaryExporter.getInstance().save(clone, file);
+		} catch (IOException e) {
+			logger.error(e.getMessage(), e);
 		}
 	}
 

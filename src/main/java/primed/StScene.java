@@ -77,13 +77,17 @@ final class StScene extends BaseAppState {
 		return geometry;
 	}
 
-	public void save(File file) {
+	public void saveToJson(File file) {
 		getState(StIo.class).toJson(scene, file);
 	}
 
-	public void load(File file) {
+	public void loadFromJson(File file) {
 		scene.detachAllChildren();
 		getState(StIo.class).fromJson(file);
+	}
+
+	public void saveToJ3o(File file) {
+		getState(StIo.class).toJ3o(scene, file);
 	}
 
 	public void duplicate(Spatial subject) {

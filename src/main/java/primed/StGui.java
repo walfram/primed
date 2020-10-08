@@ -58,8 +58,10 @@ final class StGui extends BaseAppState {
 
 		Container menu = new Container(new SpringGridLayout(Axis.X, Axis.Y));
 
-		menu.addChild(new Button("export")).addClickCommands(b -> save());
-		menu.addChild(new Button("import")).addClickCommands(b -> load());
+		menu.addChild(new Button("export as j3o")).addClickCommands(b -> saveAsJ3o());
+		menu.addChild(new Button("export as json")).addClickCommands(b -> saveAsJson());
+		menu.addChild(new Button("import from json")).addClickCommands(b -> loadFromJson());
+		
 		menu.addChild(new Button("clear scene")).addClickCommands(
 				b -> getState(StScene.class).clear(),
 				b -> gui.detachChildNamed("subject-properties"));
@@ -68,41 +70,54 @@ final class StGui extends BaseAppState {
 		menu.setLocalTranslation(app.getCamera().getWidth() * 0.5f - menu.getPreferredSize().x * 0.5f, 800 - 5, 0);
 	}
 
-	private void load() {
-		File userDir = new File(System.getProperty("user.dir"), "data");
-		// JFileChooser jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
-		JFileChooser jfc = new JFileChooser(userDir);
-		jfc.setDialogTitle("Select PrimEd File...");
-		jfc.setMultiSelectionEnabled(false);
-		jfc.setFileSelectionMode(JFileChooser.FILES_ONLY);
-		jfc.setAcceptAllFileFilterUsed(false);
-		FileNameExtensionFilter filter = new FileNameExtensionFilter("PrimEd json files", "json");
-		jfc.addChoosableFileFilter(filter);
-		// int returnValue = jfc.showOpenDialog(null);
-		int returnValue = jfc.showOpenDialog(null);
-
-		if (returnValue == JFileChooser.APPROVE_OPTION) {
-			logger.debug("loading from = {}", jfc.getSelectedFile());
-			getState(StScene.class).load(jfc.getSelectedFile());
-		}
-	}
-
-	private void save() {
+	private void saveAsJ3o() {
 		File userDir = new File(System.getProperty("user.dir"));
-		// JFileChooser jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
 		JFileChooser jfc = new JFileChooser(userDir);
-		jfc.setDialogTitle("Select PrimEd File...");
+		jfc.setDialogTitle("Export as j3o");
 		jfc.setMultiSelectionEnabled(false);
 		jfc.setFileSelectionMode(JFileChooser.FILES_ONLY);
 		jfc.setAcceptAllFileFilterUsed(false);
-		FileNameExtensionFilter filter = new FileNameExtensionFilter("PrimEd json files", "json");
+		FileNameExtensionFilter filter = new FileNameExtensionFilter("jme j3o files", "j3o");
 		jfc.addChoosableFileFilter(filter);
-		// int returnValue = jfc.showOpenDialog(null);
 		int returnValue = jfc.showSaveDialog(null);
 
 		if (returnValue == JFileChooser.APPROVE_OPTION) {
-			logger.debug("saving to = {}", jfc.getSelectedFile());
-			getState(StScene.class).save(jfc.getSelectedFile());
+			logger.debug("saving j3o to = {}", jfc.getSelectedFile());
+			getState(StScene.class).saveToJ3o(jfc.getSelectedFile());
+		}
+	}
+
+	private void loadFromJson() {
+		File userDir = new File(System.getProperty("user.dir"), "data");
+		JFileChooser jfc = new JFileChooser(userDir);
+		jfc.setDialogTitle("Select PrimEd File...");
+		jfc.setMultiSelectionEnabled(false);
+		jfc.setFileSelectionMode(JFileChooser.FILES_ONLY);
+		jfc.setAcceptAllFileFilterUsed(false);
+		FileNameExtensionFilter filter = new FileNameExtensionFilter("PrimEd json files", "json");
+		jfc.addChoosableFileFilter(filter);
+		int returnValue = jfc.showOpenDialog(null);
+
+		if (returnValue == JFileChooser.APPROVE_OPTION) {
+			logger.debug("loading json from = {}", jfc.getSelectedFile());
+			getState(StScene.class).loadFromJson(jfc.getSelectedFile());
+		}
+	}
+
+	private void saveAsJson() {
+		File userDir = new File(System.getProperty("user.dir"));
+		JFileChooser jfc = new JFileChooser(userDir);
+		jfc.setDialogTitle("Select PrimEd File...");
+		jfc.setMultiSelectionEnabled(false);
+		jfc.setFileSelectionMode(JFileChooser.FILES_ONLY);
+		jfc.setAcceptAllFileFilterUsed(false);
+		FileNameExtensionFilter filter = new FileNameExtensionFilter("PrimEd json files", "json");
+		jfc.addChoosableFileFilter(filter);
+		int returnValue = jfc.showSaveDialog(null);
+
+		if (returnValue == JFileChooser.APPROVE_OPTION) {
+			logger.debug("saving json to = {}", jfc.getSelectedFile());
+			getState(StScene.class).saveToJson(jfc.getSelectedFile());
 		}
 	}
 
