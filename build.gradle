@@ -50,11 +50,6 @@ dependencies {
     implementation 'com.simsilica:lemur-proto:1.11.0'
     implementation 'com.simsilica:lemur-props:1.1.1'
 
-	implementation 'com.jayfella:jme-fastnoise:1.0.2'
-	// implementation 'com.github.NemesisMate.util-jme3:util-jme3-lemur:master-SNAPSHOT'
-	implementation 'com.jayfella:jme-world-pager:1.0.1'
-	implementation 'com.jayfella:lemur-window:1.0.1'
-    
     implementation 'org.jmonkeyengine:jme3-core:3.3.2-stable'
     implementation 'org.jmonkeyengine:jme3-desktop:3.3.2-stable'
     implementation 'org.jmonkeyengine:jme3-lwjgl3:3.3.2-stable'
