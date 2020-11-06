@@ -15,7 +15,7 @@ import com.simsilica.lemur.event.KeyAction;
 import com.simsilica.lemur.event.KeyActionListener;
 import com.simsilica.lemur.style.ElementId;
 
-import common.CallbackCheckboxModel;
+import primed.common.CallbackCheckboxModel;
 import primed.shapes.Param;
 import primed.shapes.PmBoolean;
 import primed.shapes.PmFloat;

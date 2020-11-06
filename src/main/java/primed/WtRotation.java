@@ -14,7 +14,7 @@ import com.simsilica.lemur.event.KeyAction;
 import com.simsilica.lemur.event.KeyActionListener;
 import com.simsilica.lemur.style.ElementId;
 
-import common.Angles;
+import jme3.common.misc.Angles;
 import jme3utilities.SimpleControl;
 import primed.lemur.FloatField;
 

@@ -3,7 +3,7 @@ package primed.shapes.impl;
 import com.jme3.scene.Mesh;
 import com.jme3.scene.shape.Cylinder;
 
-import common.FlatShadedMesh;
+import jme3.common.mesh.FlatShaded;
 import primed.shapes.PmBoolean;
 import primed.shapes.PmFloat;
 import primed.shapes.PmInt;
@@ -33,7 +33,7 @@ public final class ShCylinder extends Shape {
 		Cylinder cylinder = new Cylinder(axisSamples, radialSamples, topRadius, bottomRadius, 1f, true, false);
 
 		if (flatShaded)
-			return new FlatShadedMesh(cylinder).create();
+			return new FlatShaded(cylinder).mesh();
 
 		return cylinder;
 	}

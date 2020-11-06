@@ -1,4 +1,4 @@
-package common;
+package primed.common;
 
 import java.util.function.Consumer;
 

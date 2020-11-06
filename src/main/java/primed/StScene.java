@@ -16,7 +16,7 @@ import com.jme3.scene.Spatial;
 import com.simsilica.lemur.event.DefaultMouseListener;
 import com.simsilica.lemur.event.MouseEventControl;
 
-import common.material.MtlLighting;
+import jme3.common.material.MtlLighting;
 import primed.shapes.Shape;
 
 final class StScene extends BaseAppState {

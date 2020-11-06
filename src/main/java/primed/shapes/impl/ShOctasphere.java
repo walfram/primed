@@ -2,7 +2,7 @@ package primed.shapes.impl;
 
 import com.jme3.scene.Mesh;
 
-import common.FlatShadedMesh;
+import jme3.common.mesh.FlatShaded;
 import jme3utilities.mesh.Octasphere;
 import primed.shapes.PmBoolean;
 import primed.shapes.PmInt;
@@ -28,7 +28,7 @@ public final class ShOctasphere extends Shape {
 		Octasphere octasphere = new Octasphere(numRefineSteps, 1f);
 
 		if (flatShaded)
-			return new FlatShadedMesh(octasphere).create();
+			return new FlatShaded(octasphere).mesh();
 
 		return octasphere;
 	}

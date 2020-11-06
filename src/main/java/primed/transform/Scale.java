@@ -14,7 +14,7 @@ import com.simsilica.lemur.event.CursorButtonEvent;
 import com.simsilica.lemur.event.CursorListener;
 import com.simsilica.lemur.event.CursorMotionEvent;
 
-import common.Vector3fProjection;
+import jme3.common.vector.Vector3fProjection;
 
 public final class Scale implements CursorListener {
 

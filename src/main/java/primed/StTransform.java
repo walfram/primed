@@ -19,7 +19,7 @@ import com.jme3.scene.shape.Cylinder;
 import com.simsilica.lemur.Axis;
 import com.simsilica.lemur.event.CursorEventControl;
 
-import common.material.MtlLighting;
+import jme3.common.material.MtlLighting;
 import jme3utilities.SimpleControl;
 import jme3utilities.debug.BoundsVisualizer;
 import jme3utilities.mesh.Octahedron;

@@ -3,7 +3,7 @@ package primed.shapes.impl;
 import com.jme3.scene.Mesh;
 import com.jme3.scene.shape.Torus;
 
-import common.FlatShadedMesh;
+import jme3.common.mesh.FlatShaded;
 import primed.shapes.PmBoolean;
 import primed.shapes.PmFloat;
 import primed.shapes.PmInt;
@@ -32,7 +32,7 @@ public final class ShTorus extends Shape {
 		Mesh mesh = new Torus(circleSamples, radialSamples, minorRadius, 1f);
 
 		if (flatShaded)
-			return new FlatShadedMesh(mesh).create();
+			return new FlatShaded(mesh).mesh();
 
 		return mesh;
 	}

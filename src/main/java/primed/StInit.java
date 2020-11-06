@@ -11,7 +11,7 @@ import com.jme3.scene.Node;
 import com.simsilica.lemur.GuiGlobals;
 import com.simsilica.lemur.style.BaseStyles;
 
-import common.NdDebugGrid;
+import jme3.common.debug.NdDebugGrid;
 import jme3utilities.MyCamera;
 import jme3utilities.debug.AxesVisualizer;
 
